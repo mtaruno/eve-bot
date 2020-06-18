@@ -9,4 +9,4 @@ Creating a customer service chatbot with transformer models
 * Finish retrieval based chatbot baseline model
   * Intents dictionary
 * Utilize Google's GPUs to train the transformer model
-* Create flask application and thoughtfully design the UX* 
+* Create flask application and thoughtfully design the UX
