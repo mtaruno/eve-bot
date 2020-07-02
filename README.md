@@ -32,10 +32,12 @@ Creating a customer service chatbot with transformer models.
 ### Natural Language Understanding and Neural Machine Translation
 * [DialoGPT - transformers 3.0.0 documentation](https://huggingface.co/transformers/model_doc/dialogpt.html)
 * [Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
-### Intent Classification
 
+### Intent Classification
+* [BERT Word Embeddings](https://towardsdatascience.com/nlp-extract-contextualized-word-embeddings-from-bert-keras-tf-67ef29f60a7b)
 
 ### Natural Language Generation
+* [Tensorflow's Transformer Tutorial](https://www.tensorflow.org/tutorials/text/transformer)
 
 ### UX Design
 * [How to build a kickass UX for your Chatbot?](https://blog.chatteron.io/how-to-build-a-kick-ass-ux-for-your-chat-bot-f01b46c551db#.ooj0vyif5)
