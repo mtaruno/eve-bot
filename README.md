@@ -43,7 +43,7 @@ Creating a customer service chatbot with transformer models.
 
 ### Intent Classification
 * [BERT Word Embeddings](https://towardsdatascience.com/nlp-extract-contextualized-word-embeddings-from-bert-keras-tf-67ef29f60a7b)
-
+* [How Intent Classification Works in NLU](https://botfront.io/blog/how-intent-classification-works-in-nlu)
 ### Natural Language Generation
 * [Tensorflow's Transformer Tutorial](https://www.tensorflow.org/tutorials/text/transformer)
 
