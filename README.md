@@ -3,7 +3,7 @@ Creating a customer service chatbot with transformer models.
 
 ## Finished/In-Progress
 * ~~Choose the dataset~~
-* ~~Preprocess data with Tensorflow ~~
+* ~~Preprocess data with Tensorflow~~
   * Tokenization
 * Perform Unsupervised Learning to get intent cluster labels
   * K-Means
