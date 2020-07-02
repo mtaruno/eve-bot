@@ -2,8 +2,8 @@
 Creating a customer service chatbot with transformer models.
 
 ## Finished/In-Progress
-* ~~Choose the dataset
-* ~~Preprocess data with Tensorflow 
+* ~~Choose the dataset~~
+* ~~Preprocess data with Tensorflow ~~
   * Tokenization
 * Perform Unsupervised Learning to get intent cluster labels
   * K-Means
@@ -25,9 +25,9 @@ Creating a customer service chatbot with transformer models.
 * [A Transformer Chatbot Tutorial with TensorFlow 2.0](https://medium.com/tensorflow/a-transformer-chatbot-tutorial-with-tensorflow-2-0-88bf59e66fe2)
   * [Google Colaboratory](https://colab.research.google.com/github/tensorflow/examples/blob/master/community/en/transformer_chatbot.ipynb#scrollTo=dYRx7YzCW4bu)
   * [A Transformer Chatbot Tutorial with TensorFlow 2.0](https://blog.tensorflow.org/2019/05/transformer-chatbot-tutorial-with-tensorflow-2.html)
-* [Messenger Chatbot from Scratch] (https://github.com/daoudclarke/chatbot-from-scratch)
-* https://www.cortical.io/solutions/message-intelligence/message-intelligence-benchmarking/
+* [Messenger Chatbot from Scratch](https://github.com/daoudclarke/chatbot-from-scratch)
 * [Cortical.io - Next generation of AI business applications](https://www.cortical.io)
+  * [Their benchmarking] https://www.cortical.io/solutions/message-intelligence/message-intelligence-benchmarking/
 
 ### Natural Language Understanding and Neural Machine Translation
 * [DialoGPT - transformers 3.0.0 documentation](https://huggingface.co/transformers/model_doc/dialogpt.html)
@@ -39,6 +39,5 @@ Creating a customer service chatbot with transformer models.
 
 ### UX Design
 * [How to build a kickass UX for your Chat-bot?](https://blog.chatteron.io/how-to-build-a-kick-ass-ux-for-your-chat-bot-f01b46c551db#.ooj0vyif5)
-* 
 
 And shoutout to Scikit-learn documentation.
