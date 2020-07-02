@@ -36,6 +36,7 @@ Creating a customer service chatbot with transformer models.
 * [Messenger Chatbot from Scratch](https://github.com/daoudclarke/chatbot-from-scratch)
 * [Cortical.io - Next generation of AI business applications](https://www.cortical.io)
   * [Their benchmarking](https://www.cortical.io/solutions/message-intelligence/message-intelligence-benchmarking/)
+* [Guide to Machine Reading Comprehension in Production with AllenNLP](https://towardsdatascience.com/a-guide-to-machine-reading-comprehension-in-production-with-allennlp-c545867bfeb1)
 
 ### Natural Language Understanding and Neural Machine Translation
 * [DialoGPT - transformers 3.0.0 documentation](https://huggingface.co/transformers/model_doc/dialogpt.html)
@@ -44,8 +45,10 @@ Creating a customer service chatbot with transformer models.
 ### Intent Classification
 * [BERT Word Embeddings](https://towardsdatascience.com/nlp-extract-contextualized-word-embeddings-from-bert-keras-tf-67ef29f60a7b)
 * [How Intent Classification Works in NLU](https://botfront.io/blog/how-intent-classification-works-in-nlu)
-### Natural Language Generation
+
+### Natural Language Generation - Transformer Models
 * [Tensorflow's Transformer Tutorial](https://www.tensorflow.org/tutorials/text/transformer)
+* [Self-Attention Mechanism](https://medium.com/@Alibaba_Cloud/self-attention-mechanisms-in-natural-language-processing-9f28315ff905)
 
 ### UX Design
 * [How to build a kickass UX for your Chatbot?](https://blog.chatteron.io/how-to-build-a-kick-ass-ux-for-your-chat-bot-f01b46c551db#.ooj0vyif5)
