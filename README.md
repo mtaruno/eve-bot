@@ -38,6 +38,6 @@ Creating a customer service chatbot with transformer models.
 ### Natural Language Generation
 
 ### UX Design
-* [How to build a kickass UX for your Chat-bot?](https://blog.chatteron.io/how-to-build-a-kick-ass-ux-for-your-chat-bot-f01b46c551db#.ooj0vyif5)
+* [How to build a kickass UX for your Chatbot?](https://blog.chatteron.io/how-to-build-a-kick-ass-ux-for-your-chat-bot-f01b46c551db#.ooj0vyif5)
 
 And shoutout to Scikit-learn documentation.
