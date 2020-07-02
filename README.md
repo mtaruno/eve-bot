@@ -27,7 +27,7 @@ Creating a customer service chatbot with transformer models.
   * [A Transformer Chatbot Tutorial with TensorFlow 2.0](https://blog.tensorflow.org/2019/05/transformer-chatbot-tutorial-with-tensorflow-2.html)
 * [Messenger Chatbot from Scratch](https://github.com/daoudclarke/chatbot-from-scratch)
 * [Cortical.io - Next generation of AI business applications](https://www.cortical.io)
-  * [Their benchmarking] https://www.cortical.io/solutions/message-intelligence/message-intelligence-benchmarking/
+  * [Their benchmarking](https://www.cortical.io/solutions/message-intelligence/message-intelligence-benchmarking/)
 
 ### Natural Language Understanding and Neural Machine Translation
 * [DialoGPT - transformers 3.0.0 documentation](https://huggingface.co/transformers/model_doc/dialogpt.html)
