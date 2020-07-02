@@ -4,21 +4,29 @@ Creating a customer service chatbot with transformer models.
 ## Finished/In-Progress
 * ~~Choose the dataset~~
 * ~~Preprocess data with Tensorflow~~
-  * Tokenization
+  * ~~Tokenization and all preprocessing steps~~
+* Embed the data in a meaningful way
+  * ~~TFIDF~~
+  * ~~Bag of words~~
+  * Document embedding exploration
+  * BERT
+  * Fasttext
 * Perform Unsupervised Learning to get intent cluster labels
-  * K-Means
+  * ~~K-Means~~
   * DBSCAN
   * LDA
+  * Silouhette Evaluation
 * Supervised learning for intent classification on unseen data
-* Deploy my chatbot model with Cortex
+  * Using my Twitter labels
+  * Using my synthetic data
 
 ## Todo:
-* Embed the data in a meaningful way
-  * Document embedding exploration
 * Finish retrieval based chatbot baseline model
   * Intents dictionary
 * Utilize Google's GPUs to train the transformer model
-* Create flask application and thoughtfully design the UX
+* Minimum Viable Product Retrieval-Based Chatbot
+* Natural language generation: Generative-Based Chatbot
+* Deploy my chatbot model with Cortex OR create flask application with thoughtfully designed UX
 
 # Resources
 ### Example end-to-end projects:
