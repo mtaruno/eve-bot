@@ -37,6 +37,7 @@ Creating a customer service chatbot with transformer models.
 * [Cortical.io - Next generation of AI business applications](https://www.cortical.io)
   * [Their benchmarking](https://www.cortical.io/solutions/message-intelligence/message-intelligence-benchmarking/)
 * [Guide to Machine Reading Comprehension in Production with AllenNLP](https://towardsdatascience.com/a-guide-to-machine-reading-comprehension-in-production-with-allennlp-c545867bfeb1)
+* [Cool DiabloGPT Text Generation from Microsoft](https://huggingface.co/microsoft/DialoGPT-medium?text=Omg+you+are+the+worst+player)
 
 ### Natural Language Understanding and Neural Machine Translation
 * [DialoGPT - transformers 3.0.0 documentation](https://huggingface.co/transformers/model_doc/dialogpt.html)
