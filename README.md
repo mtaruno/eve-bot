@@ -1,5 +1,5 @@
-# Transformer Chatbot
-Creating a customer service chatbot with transformer models.
+# EVE 
+Enhancing Virtual Engagement with a Twitter Apple Support bot utilizing transformer models.
 
 ## Finished/In-Progress
 * ~~Choose the dataset~~
