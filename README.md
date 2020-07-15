@@ -1,4 +1,4 @@
-# EVE 
+# Eve Bot
 Enhancing Virtual Engagement with a Twitter Apple Support bot utilizing transformer models.
 
 ## Finished/In-Progress
