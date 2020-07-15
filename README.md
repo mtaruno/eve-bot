@@ -8,19 +8,19 @@ Enhancing Virtual Engagement with a Twitter Apple Support bot utilizing transfor
 * Embed the data in a meaningful way
   * ~~TFIDF~~
   * ~~Bag of words~~
-  * Document embedding exploration
-  * BERT
-  * Fasttext
+  * ~~Document embedding exploration~~
+  * BERT and Fasttext (later)
 * Perform Unsupervised Learning to get intent cluster labels
   * ~~K-Means~~
-  * DBSCAN
-  * LDA
+  * ~~DBSCAN, LDA (removed from plan)~~
   * Silouhette Evaluation
 * Supervised learning for intent classification on unseen data
   * Using my Twitter labels
   * Using my synthetic data
 
 ## Todo:
+* ~~Get my training data~~
+* Refine my training data
 * Finish retrieval based chatbot baseline model
   * Intents dictionary
 * Utilize Google's GPUs to train the transformer model
