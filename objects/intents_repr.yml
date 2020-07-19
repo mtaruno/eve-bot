@@ -1,0 +1,25 @@
+battery:
+- battery
+- power
+forgot_password:
+- password
+- account
+- login
+lost_replace:
+- replace
+- lost
+- gone
+- missing
+- trade
+payment:
+- credit
+- card
+- payment
+- pay
+repair:
+- repair
+- fix
+- broken
+update:
+- update
+- upgrade
