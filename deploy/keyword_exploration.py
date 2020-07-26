@@ -23,6 +23,8 @@ def main():
 
     st.title("Visualizing Distribution of Intents in My Processed Twitter Data")
 
+    # select = st.multiselect("Choose your dataset")
+
     # Inputting the intents
 
     """
@@ -41,6 +43,7 @@ def main():
     # Showing how many tweets contain the keyword
     st.text(f"{len(filtered)} Tweets contain the keyword {keyword}")
 
+    st.subheader(f"Here are Tweets that contain the keyword")
     # Showing the keyword filtered dataframe
     pd.set_option("display.max_columns", None)
     st.dataframe(filtered.iloc[:, 0])
@@ -53,11 +56,6 @@ def main():
     Intent Exploration
     """
 
-    st.multiselect(
-        "What keyword intents do you want to explore?",
-        ["update", "battery", "forgot_password", "repair", "payment", ""],
-    )
-
     st.subheader("Intent Distribution in the Data")
 
     intents = {
@@ -68,8 +66,8 @@ def main():
         "payment": ["credit", "card", "payment", "pay"],
     }
 
-    # Three different ways to filter out Tweets based on Keywords
-    # 1.
+    st.text(intents)
+
     def get_key_tweets(series, keywords):
         """ Takes as input the list of keywords and outputs the Tweets that contains at least
         one of these keywords """
@@ -81,42 +79,6 @@ def main():
                     keyword_tweets.append(tweet)
         return keyword_tweets
 
-    # 2. Making a function that filters to Tweets that needs to have ALL the keywords
-    def all_key_tweets(series, keywords):
-        """ Takes as input the list of keywords and outputs the Tweets have all the keywords"""
-        keyword_absent_tweets = []
-        for tweet in series:
-            # Want to check if keyword is not in tweets
-            if all(item in tweet for item in keywords):
-                keyword_absent_tweets.append(tweet)
-        return keyword_absent_tweets
-
-    # 3. Making a function that filters to tweets that DONT contain any of the keywords
-    def key_absent_tweets(series, keywords):
-        """ Takes as input the list of keywords and outputs the Tweets that don't contain any
-        of these keywords """
-        keyword_absent_tweets = []
-        for tweet in series:
-            # Want to check if keyword is not in tweets
-            if not any(item in tweet for item in keywords):
-                keyword_absent_tweets.append(tweet)
-        return keyword_absent_tweets
-
-    # Getting a list of all my keywords so far
-    all_keywords = []
-    for keywords in intents.values():
-        for keyword in keywords:
-            all_keywords.append(keyword)
-
-    def only_key_tweets(series, keywords):
-        """ Uses the all_keywords """
-        kept = list()
-        for tweet in series:
-            # Check
-            if all(elem in tweet for elem in keywords):
-                kept.append(tweet)
-        return pd.Series(kept)
-
     def to_set(l):
         """ In order to make the Tweets a set to check for intersections, we need
         to make them immutable by making it a tuple because sets only accept immutable
@@ -124,7 +86,6 @@ def main():
         return set([tuple(row) for row in l])
 
     # Using the function above to visualize the distribution of intents in my dataset
-
     intent_lengths = [
         len(get_key_tweets(processed["Processed Inbound"], intents[intent]))
         for intent in intents.keys()

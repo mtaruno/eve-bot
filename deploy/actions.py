@@ -1,28 +1,11 @@
 import random
-
 # Visualization
 import seaborn as sns
 import matplotlib.pyplot as plt
-
 sns.set(style="ticks", color_codes=True)
 # Data science
 import pandas as pd
-
-print(f"Pandas: {pd.__version__}")
 import numpy as np
-
-print(f"Numpy: {np.__version__}")  # Data science
-import pandas as pd
-
-print(f"Pandas: {pd.__version__}")
-import numpy as np
-
-print(f"Numpy: {np.__version__}")
-# Cool progress bars
-from tqdm import tqdm_notebook as tqdm
-
-tqdm().pandas()  # Enable tracking of execution progress
-
 import re
 import collections
 import yaml
@@ -34,9 +17,9 @@ train = pd.read_pickle("../objects/train.pkl")
 with open(r"../objects/entities.yml") as file:
     entities = yaml.load(file, Loader=yaml.FullLoader)
 
-
 # Making a class to define all the actions to do when you are
 class Actions:
+    memory = {'hardware': [], 'app': []}
     def __init__(self):
         pass
 
@@ -63,8 +46,11 @@ class Actions:
     def link_to_human(self):
         return random.choice(["Alright. Let me direct you to a representative!"])
 
-    def battery(self):
-        pass
+    def battery(self, hardware = False):
+        if hardware == False:
+            return ['What hardware are you using?']
+        else:
+            return random.choice([''])
 
     def forgot_pass(self):
         pass

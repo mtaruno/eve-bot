@@ -7,8 +7,7 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 import gensim
-
-print(f"gensim: {gensim.__version__}")
+import builtins
 
 # Text
 from nltk.tokenize import word_tokenize
@@ -42,10 +41,6 @@ processed = pd.read_pickle("../objects/processed.pkl")
 with open(r"../objects/intents.yml") as file:
     intents = yaml.load(file, Loader=yaml.FullLoader)
 
-# Previewing
-print(f"\nintents:\n{intents}")
-print(f"\nprocessed:\n{processed.head()}")
-
 
 if __name__ == "__main":
     main()
@@ -71,7 +66,6 @@ def main():
         "location": "nearest apple location store",
     }
 
-    @st.cache
     def add_extra(current_tokenized_data, extra_tweets):
         """ Adding extra tweets to current tokenized data"""
 
@@ -163,18 +157,7 @@ def main():
     """
     # Version 2
     tknzr = TweetTokenizer(strip_handles=True, reduce_len=True)
-    ## Just tokenizing all the values of ideal' values to be able to be fed in to matching function
-    # intents_repr = dict(zip(ideal.keys(), [tknzr.tokenize(v) for v in ideal.values()]))
-    # Pythonic way
-    intents_repr = {k: tknzr.tokenize(v) for k, v in ideal.items()}
-    print(intents_repr)
 
-    # Saving intents_repr into YAML
-    with open("../objects/intents_repr.yml", "w") as outfile:
-        yaml.dump(intents_repr, outfile, default_flow_style=False)
-
-    # Version 2
-    tknzr = TweetTokenizer(strip_handles=True, reduce_len=True)
     ## Just tokenizing all the values of ideal' values to be able to be fed in to matching function
     # intents_repr = dict(zip(ideal.keys(), [tknzr.tokenize(v) for v in ideal.values()]))
     # Pythonic way
@@ -188,38 +171,45 @@ def main():
     # Tags for my dictionary
     tags = []
 
+    tokenized_processed_inbound = processed_inbound.apply(tknzr.tokenize)
     # Find the index locations of specific Tweets
 
     def report_index_loc(tweet, intent_name):
         """ Takes in the Tweet to find the index for and returns a report of that Tweet index along with what the 
         representative Tweet looks like"""
-        tweets = []
-        for i, j in enumerate(processed_inbound.apply(tknzr.tokenize)):
-            if j == tweet:
-                tweets.append((i, True))
-            else:
-                tweets.append((i, False))
-        index = []
-        get_index = [
-            index.append(i[0]) if i[1] == True else False for i in tweets
-        ]  # Comprehension saves space
-        preview = processed_inbound.iloc[index]
+        try:
+            tweets = []
+            for i, j in enumerate(tokenized_processed_inbound):
+                if j == tweet:
+                    tweets.append((i, True))
+                else:
+                    tweets.append((i, False))
+            index = []
+            for i in tweets:
+                if i[1] == True:
+                    index.append(i[0])
 
-        # Appending to indexes for dictionary
-        tags.append(str(index[0]))
+            preview = processed_inbound.iloc[index]
+
+            # Appending to indexes for dictionary
+            tags.append(str(index[0]))
+        except IndexError:
+            print("Index not in list, move on")
+            return
+
         return intent_name, str(index[0]), preview
 
     # Reporting and storing indexes with the function
     st.text("TAGGED INDEXES TO LOOK FOR")
     for j, i in intents_repr.items():
-        st.text(
-            "\n{} \nIndex: {}\nRepresentative Base Tweet: {}".format(
-                *report_index_loc(i, j)
-            )
-        )
+        try:
+            st.text("\n{} \nIndex: {}\nPreview: {}".format(*report_index_loc(i, j)))
+        except Exception as e:
+            st.text("Index ended")
 
     # Pythonic way of making new dictionary from 2 lists
     intents_tags = dict(zip(intents_repr.keys(), tags))
+
     st.header("Intents Tags Dictionary")
     st.text(intents_tags)
 
@@ -278,11 +268,11 @@ def main():
     }
 
     # Inserting manually added intents to data
-    @st.cache
     def insert_manually(target, prototype):
         """ Taking a prototype tokenized document to repeat until
         you get length target"""
         factor = math.ceil(target / len(prototype))
+        print(factor)
         content = prototype * factor
         return [content[i] for i in range(target)]
 
@@ -418,6 +408,10 @@ def main():
     # Doing my bucket evaluations here - seeing what each distinct bucket intent means
     for i in train.columns:
         top10_bagofwords(
-            train[i].apply(" ".join), f"bucket_eval/{i}", f"Top 10 Words in {i} Intent"
+            train[i].apply(" ".join), f"bucket_eval/{i}", f"Top 10 Words in {i} Intent",
         )
+
+
+if __name__ == "__main__":
+    main()
 

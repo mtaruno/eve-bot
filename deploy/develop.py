@@ -17,8 +17,6 @@ with open(r"../objects/entities.yml") as file:
 sns.set(style="ticks", color_codes=True)
 sns.set_style(style="whitegrid")
 
-st.title("Enhancing Virtual Assistance with EVE")
-
 
 def main():
     a = Actions()
@@ -28,9 +26,9 @@ def main():
 
     # Initializing dialogue history
     columns = entities["hardware"] + entities["apps"]
-    history = pd.DataFrame(dict(zip(columns, np.zeros(len(columns)))))
+    # history = pd.DataFrame(dict(zip(columns, np.zeros(len(columns)))))
     st.subheader("Showing Dialogue History")
-    st.dataframe(history)
+    # st.dataframe(history)
 
 
 def initialize(user_input):
@@ -53,11 +51,9 @@ def initialize(user_input):
 
     st.subheader("Hardware Identified")
     hardware = extract_hardware(user_input, visualize=True)
-    st.text(hardware)
 
     st.subheader("Applications Identified")
     app = extract_app(user_input, visualize=True)
-    st.text(app)
 
     return (intents, hardware, app)
 

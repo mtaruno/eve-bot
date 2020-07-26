@@ -19,6 +19,7 @@ import collections
 import yaml
 import pickle
 import streamlit as st
+import imgkit
 
 # Reading back in intents
 with open(r"../objects/intents.yml") as file:
@@ -33,6 +34,9 @@ processed = pd.read_pickle("../objects/processed.pkl")
 # Read our trained models back in
 hardware_nlp = pickle.load(open("../models/hardware_big_nlp.pkl", "rb"))
 app_nlp = pickle.load(open("../models/app_big_nlp.pkl", "rb"))
+
+# Wrapper to display my displacy visualizations
+HTML_WRAPPER = """<div style="overflow-x: auto; border: 1px solid #e6e9ef; border-radius: 0.25rem; padding: 1rem; margin-bottom: 2.5rem">{}</div>"""
 
 # Testing out the results
 test_text_hardware = "My iphone sucks but my macbook pro doesnt. Why couldnt they make\
@@ -61,11 +65,13 @@ def extract_hardware(user_input, visualize=False):
         # Visualizing with displaCy how the document had it's entity tagged (runs a server)
         colors = {"HARDWARE": "linear-gradient(90deg, #aa9cfc, #fc9ce7)"}
         options = {"ents": ["HARDWARE"], "colors": colors}
-        svg = displacy.render(doc, style="ent", options=options)
-        # displacy.serve(doc, style="ent", options=options)
-        output_path = Path("displacy/hardware.svg")
-        output_path.open("w", encoding="utf-8").write(svg)
-
+        # Saves to HTML string
+        html = displacy.render(doc, style="ent", options=options)
+        with open("displacy/hardware.html", "a") as out:
+            out.write(html + "\n")
+        # Double newlines seem to mess with the rendering
+        html = html.replace("\n\n", "\n")
+        st.write(HTML_WRAPPER.format(html), unsafe_allow_html=True)
     return extracted_entities
 
 
@@ -86,11 +92,13 @@ def extract_app(user_input, visualize=False):
         # Visualizing with displaCy how the document had it's entity tagged (runs a server)
         colors = {"APP": "linear-gradient(90deg, #aa9cfc, #fc9ce7)"}
         options = {"ents": ["APP"], "colors": colors}
-        # html = displacy.render(doc, style="ent", options=options)
-        # display(HTML(html))
-        svg = displacy.render(doc, style="ent", options=options)
-        output_path = Path("displacy/app.svg")
-        output_path.open("w", encoding="utf-8").write(svg)
+        html = displacy.render(doc, style="ent", options=options)
+        with open("displacy/hardware.html", "a") as out:
+            out.write(html + "\n")
+        # Double newlines seem to mess with the rendering
+        html = html.replace("\n\n", "\n")
+        st.write(HTML_WRAPPER.format(html), unsafe_allow_html=True)
+
     return extracted_entities
 
 
@@ -100,3 +108,4 @@ def extract_default(user_input):
 
 # Test functionality
 # print(extract_app(test_text_app))
+# extract_hardware(test_text_hardware, visualize=True)
