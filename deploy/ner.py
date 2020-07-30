@@ -67,8 +67,8 @@ def extract_hardware(user_input, visualize=False):
         options = {"ents": ["HARDWARE"], "colors": colors}
         # Saves to HTML string
         html = displacy.render(doc, style="ent", options=options)
-        with open("displacy/hardware.html", "a") as out:
-            out.write(html + "\n")
+        # with open("displacy/hardware.html", "a") as out:
+        #     out.write(html + "\n")
         # Double newlines seem to mess with the rendering
         html = html.replace("\n\n", "\n")
         st.write(HTML_WRAPPER.format(html), unsafe_allow_html=True)
@@ -93,8 +93,8 @@ def extract_app(user_input, visualize=False):
         colors = {"APP": "linear-gradient(90deg, #aa9cfc, #fc9ce7)"}
         options = {"ents": ["APP"], "colors": colors}
         html = displacy.render(doc, style="ent", options=options)
-        with open("displacy/hardware.html", "a") as out:
-            out.write(html + "\n")
+        # with open("displacy/hardware.html", "a") as out:
+        #     out.write(html + "\n")
         # Double newlines seem to mess with the rendering
         html = html.replace("\n\n", "\n")
         st.write(HTML_WRAPPER.format(html), unsafe_allow_html=True)

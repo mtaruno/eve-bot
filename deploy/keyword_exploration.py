@@ -66,7 +66,7 @@ def main():
         "payment": ["credit", "card", "payment", "pay"],
     }
 
-    st.text(intents)
+    st.write(intents)
 
     def get_key_tweets(series, keywords):
         """ Takes as input the list of keywords and outputs the Tweets that contains at least

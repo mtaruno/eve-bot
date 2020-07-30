@@ -1,70 +1,95 @@
 import re
-from sklearn.preprocessing import OneHotEncoder
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 
 # Load intent classification model
 from keras.models import load_model
 
 import pandas as pd
 import numpy as np
+import yaml
 
-model = load_model("../models/intent_classification.h5")
-
-# Reading in training data
 train = pd.read_pickle("../objects/train.pkl")
-# Functions required for initialization
-get_max_token_length = lambda series: len(max(series, key=len))
+print(f"Training data: {train.head()}")
 
+model = load_model("../models/intent_classification_b.h5")
 
-def make_tokenizer(docs, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~'):
-    t = Tokenizer(filters=filters)
-    t.fit_on_texts(docs)
-    return t
-
-
-pad_tweets = lambda encoded_doc, max_length: pad_sequences(
-    encoded_doc, maxlen=max_length, padding="post"
+# I use Keras' Tokenizer API - helpful link I followed: https://machinelearningmastery.com/prepare-text-data-deep-learning-keras/
+# Train test split
+# Split in to train and test
+# stratify for class imbalance and random state for reproducibility - 7 is my lucky number
+X_train, X_val, y_train, y_val = train_test_split(
+    train["Utterance"],
+    train["Intent"],
+    test_size=0.3,
+    shuffle=True,
+    stratify=train["Intent"],
+    random_state=7,
 )
 
-# Initializing required variables
 
-max_token_length = get_max_token_length(train["Utterance"])
-token = make_tokenizer(train["Utterance"])
-unique_intents = sorted(list(set(train["Intent"])))
+# Encoding the target variable
+le = LabelEncoder()
+le.fit(y_train)
+
+# NOTE: Since we
+#  use an embedding matrix, we use the Tokenizer API to integer encode our data - https://machinelearningmastery.com/use-word-embedding-layers-deep-learning-keras/
+t = Tokenizer()
+t.fit_on_texts(X_train)
+
+# Pad documents to a specified max length
+max_length = len(max(X_train, key=len))
 
 
-def infer_intent(text):
-    """ Takes as input an utterance an outputs a dictionary of intent probabilities """
-    # Making sure that my text is a string
-    string_text = re.sub(r"[^ a-z A-Z 0-9]", " ", text)
+def convert_to_padded(tokenizer, docs):
+    """ Taking in Keras API Tokenizer and documents and returns their padded version """
+    ## Using API's attributes
+    # Embedding
+    embedded = t.texts_to_sequences(docs)
+    # Padding
+    padded = pad_sequences(embedded, maxlen=max_length, padding="post")
+    return padded
+
+
+padded_X_train = convert_to_padded(tokenizer=t, docs=X_train)
+padded_X_val = convert_to_padded(tokenizer=t, docs=X_val)
+
+
+def infer_intent(user_input):
+    """ Making a function that recieves a user input and outputs a 
+    dictionary of predictions """
+    assert isinstance(user_input, str), "User input must be a string!"
+    keras_input = [user_input]
+    print(user_input)
 
     # Converting to Keras form
-    keras_text = token.texts_to_sequences(string_text)
+    padded_text = convert_to_padded(t, keras_input)
+    x = padded_text[0]
 
-    # Check for and remove unknown words - [] indicates that word is unknown
-    if [] in keras_text:
-        # Filtering out
-        keras_text = list(filter(None, keras_text))
-    keras_text = np.array(keras_text).reshape(1, len(keras_text))
-    x = pad_tweets(keras_text, max_token_length)
+    # Prediction for each document
+    probs = model.predict(padded_text)
+    #     print('Prob array shape', probs.shape)
 
-    # Generate class probability predictions
-    # You're using the overfit model to predict!
-    intent_predictions = np.array(model.predict(x)[0])
+    # Get the classes from label encoder
+    classes = le.classes_
 
-    # Match probability predictions with intents
-    pairs = list(zip(unique_intents, intent_predictions))
-    dict_pairs = dict(pairs)
-
-    # Output dictionary
-    output = {
+    # Getting predictions dict and sorting
+    predictions = dict(zip(classes, probs[0]))
+    sorted_predictions = {
         k: v
-        for k, v in sorted(dict_pairs.items(), key=lambda item: item[1], reverse=True)
+        for k, v in sorted(predictions.items(), key=lambda item: item[1], reverse=True)
     }
 
-    return string_text, output
+    # Saving intent classification
+    # Storing it to YAML file
+    with open("../objects/sorted_predictions.yml", "w") as outfile:
+        yaml.dump(sorted_predictions, outfile, default_flow_style=False)
+
+    return user_input, sorted_predictions
 
 
-string_text, conf_dict = infer_intent("hi")
-print(conf_dict)
+# Testing results
+# print(infer_intent("update is not working"))
+

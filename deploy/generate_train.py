@@ -211,7 +211,7 @@ def main():
     intents_tags = dict(zip(intents_repr.keys(), tags))
 
     st.header("Intents Tags Dictionary")
-    st.text(intents_tags)
+    st.write(intents_tags)
 
     """
     ACTUALLY GENERATING MY TRAINING DATA
