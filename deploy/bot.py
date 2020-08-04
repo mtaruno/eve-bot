@@ -1,7 +1,7 @@
 import streamlit as st
 from actions import Actions
 from ner import extract_app, extract_hardware
-from initialize_intent_classification import infer_intent
+from initialize_intent_classifier import infer_intent
 import pandas as pd
 import numpy as np
 import yaml

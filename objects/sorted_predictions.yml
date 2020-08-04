@@ -1,0 +1,53 @@
+battery: !!python/object/apply:numpy.core.multiarray.scalar
+- &id001 !!python/object/apply:numpy.dtype
+  args:
+  - f4
+  - 0
+  - 1
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - -1
+  - -1
+  - 0
+- !!binary |
+  a2adOQ==
+challenge_robot: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  Qh8+PA==
+forgot_password: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  n9XnOQ==
+goodbye: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  0il8Pw==
+greeting: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  TNxuOQ==
+info: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  wMokOA==
+location: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  FFrBOg==
+payment: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  ud4WOQ==
+speak_representative: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  OQ0JNA==
+update: !!python/object/apply:numpy.core.multiarray.scalar
+- *id001
+- !!binary |
+  6rVFOg==

@@ -5,13 +5,6 @@ forgot_password:
 - password
 - account
 - login
-lost_replace:
-- replace
-- lost
-- gone
-- missing
-- trade
-- trade-in
 payment:
 - credit
 - card
