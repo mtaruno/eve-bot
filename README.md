@@ -79,7 +79,7 @@ This directory contains all the saved models. Important files:
 * intent_classification_b.h5: Contains my latest intent_classification model
 * hardware_big_nlp and app_big_nlp = these are my saved model outputs of my entity recognizer. However, it's ~500MB so I did not include it in this submission. Not to worry though, it's reproducible by simply doing (it will take a much longer time than you expect, but don't worry, it will eventually generate the required files):
 
-	python generate_ner_models.py
+		python generate_ner_models.py
 
 * deploy/images Directory:
 Contains the images I use for Eve bot.
