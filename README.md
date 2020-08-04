@@ -5,19 +5,19 @@ Welcome to Enhancing Virtual Engagement with Eve, a Twitter Apple Support bot.
 
 Here is a summary of what each file contains:
 
-* /1. EDA, Wrangling, and Initial Preprocessing
+* 1 EDA, Wrangling, and Initial Preprocessing
 Contains my data exploration, ideation, and preprocessing pipeline.
 
 * 1.1. Intent Clustering, Document Embeddings, and Unsupervised Learning
 In this notebook, I take the preprocessed and tokenized data in the previous notebook and try to assign labels for each Tweet in the dataset by using meaningful document embedding methods (so my models can read the data) and unsupervised learning methods such as K-Means, DBScan, and LDA.
 
-* 2. Heuristic Intent Distribution Exploration
+* 2 Heuristic Intent Distribution Exploration
 This is a further EDA step I employed to comprehensively know more about what intent labels truly exist in my data. Doing it by keyword might prove to be a good baseline way to do this. I build off this idea, and do a heuristic clustering of my intents by trying to minimize intent intersections. I try to boil down with this method to have the most distinct and _mutually exclusive_ sets of intents so that Eve bot will be able to be trained to distinguish these intents.
 
 * 2.1. Getting my NN Training Data with Doc2Vec
 This notebook is where I generated my training data using the Doc2Vec document embedding method and made it in a format that is more readily suitable for modeling.
 
-* 3. Intent Classification with Keras
+* 3 Intent Classification with Keras
 This notebook is to use the Keras package and use their implementation of a Bidirectional Long Short Term Memory (LSTM) Neural Network to build a model capable of classifying intents given a user input.
 
 * 3.1. Named Entity Recognition
