@@ -6,47 +6,61 @@ Welcome to Enhancing Virtual Engagement with Eve, a Twitter Apple Support bot.
 Here is a summary of what each file contains:
 
 * **1 EDA, Wrangling, and Initial Preprocessing**
+
 Contains my data exploration, ideation, and preprocessing pipeline.
 
 * **1.1. Intent Clustering, Document Embeddings, and Unsupervised Learning**
+
 In this notebook, I take the preprocessed and tokenized data in the previous notebook and try to assign labels for each Tweet in the dataset by using meaningful document embedding methods (so my models can read the data) and unsupervised learning methods such as K-Means, DBScan, and LDA.
 
 * **2 Heuristic Intent Distribution Exploration**
+
 This is a further EDA step I employed to comprehensively know more about what intent labels truly exist in my data. Doing it by keyword might prove to be a good baseline way to do this. I build off this idea, and do a heuristic clustering of my intents by trying to minimize intent intersections. I try to boil down with this method to have the most distinct and _mutually exclusive_ sets of intents so that Eve bot will be able to be trained to distinguish these intents.
 
 * **2.1. Getting my NN Training Data with Doc2Vec**
+
 This notebook is where I generated my training data using the Doc2Vec document embedding method and made it in a format that is more readily suitable for modeling.
 
 * **3 Intent Classification with Keras**
+
 This notebook is to use the Keras package and use their implementation of a Bidirectional Long Short Term Memory (LSTM) Neural Network to build a model capable of classifying intents given a user input.
 
 * **3.1. Named Entity Recognition**
+
 The chatbot should also be able, based on the intent, to label entities that it stores in its dialog management so that its replies are more accurate. This notebook is where for every Tweet, I try to extract the entities. More particularly, from the utterance as input, I want the output to be all the entities in that utterance stored in a dictionary.
 
 ### "deploy" directory (this directory is where I compiled everything and was able to create my app using Python scripts):
 
 * **actions.py**
+
 This class enumerates all the actions that a user can do. Given the intent predicted by my Keras model, and the entity extracted by my spaCy NER, it will map it to an action and return a response back to the user.
 
 * **app.py**
+
 Compiles all the other scripts together.
 
 * **bot.py**
+
 Contains the chatbot page (i.e. the bulk of the logic to create Eve bot). The other pages can be accessed in app.py.
 
 * **generate_train.py**
+
 A Streamlit tool (I found the visualizations of Streamlit to be very helpful to generate my training data with Doc2Vec and output it into a file.
 
 * **initialize_intent_classifier.py**
+
 This is a shorthand version of the intent classifier that involves just loading the model in so that my application can get the model predictions given a user input. We assume that the model is already saved to a file so that we can just load it in.
 
 * **intent_classifier.py**
+
 This is the full fledged intent classifier that takes the data and actually runs the model steps to achieve the final model output.
 
 * **keyword_exploration.py**
+
 Created my Streamlit tool to explore intents in my dataset using keywords - or combinations of them.
 
 * **ner.py**
+
 Named Entity Recognition tool.
 
 # Saved Objects
