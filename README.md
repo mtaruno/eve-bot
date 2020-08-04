@@ -124,4 +124,4 @@ Notebooks should be run with the standard jupyter notebook command in command li
 ### UX Design
 * [How to build a kickass UX for your Chatbot?](https://blog.chatteron.io/how-to-build-a-kick-ass-ux-for-your-chat-bot-f01b46c551db#.ooj0vyif5)
 
-And shoutout to Scikit-learn documentation.
+* RASA documentation and masterclass videos were extremely helpful
