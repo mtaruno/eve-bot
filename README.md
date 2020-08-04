@@ -74,15 +74,15 @@ https://nlp.stanford.edu/projects/glove/
 * **Objects Directory**
 This directory contains all the objects I need to run my chatbot. Important files:
 
-**train.pkl**: My training data that I used
-**entities.yml**: Contains a dictionary of the entity keywords I used to train my custom NER
-**history_df.pkl**: Contains the dialogue history at every timestep
-**processed.pkl**: Contains the processed data from my first notebook step
-**labels_grand.pkl**: Contains the labels from the K-Means clustering for my dataset for both bag of words and tfidf
-**processed.pkl**: Contains my inbound, outbound, and processed inbound versions of my data after the first initial preprocessing step shown in my first notebook
-**silouette_scores_d2v**: Contains silhouette scores for doc2vec encoded data as a result of K-Means clustering
-**hardware_train.pkl**: The data for the hardware entity to train NER model on
-**app_train.pkl**: The data for the app entity to train NER model on
+* **train.pkl**: My training data that I used
+* **entities.yml**: Contains a dictionary of the entity keywords I used to train my custom NER
+* **history_df.pkl**: Contains the dialogue history at every timestep
+* **processed.pkl**: Contains the processed data from my first notebook step
+* **labels_grand.pkl**: Contains the labels from the K-Means clustering for my dataset for both bag of words and tfidf
+* **processed.pkl**: Contains my inbound, outbound, and processed inbound versions of my data after the first initial preprocessing step shown in my first notebook
+* **silouette_scores_d2v**: Contains silhouette scores for doc2vec encoded data as a result of K-Means clustering
+* **hardware_train.pkl**: The data for the hardware entity to train NER model on
+* **app_train.pkl**: The data for the app entity to train NER model on
 
 * **Models Directory**
 This directory contains all the saved models. Important files:
