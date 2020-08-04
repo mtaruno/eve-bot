@@ -5,7 +5,7 @@ Welcome to Enhancing Virtual Engagement with Eve, a Twitter Apple Support bot.
 
 Here is a summary of what each file contains:
 
-* 1. EDA, Wrangling, and Initial Preprocessing
+* \1. EDA, Wrangling, and Initial Preprocessing
 Contains my data exploration, ideation, and preprocessing pipeline.
 
 * 1.1. Intent Clustering, Document Embeddings, and Unsupervised Learning
