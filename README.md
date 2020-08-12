@@ -29,7 +29,7 @@ This notebook is to use the Keras package and use their implementation of a Bidi
 
 The chatbot should also be able, based on the intent, to label entities that it stores in its dialog management so that its replies are more accurate. This notebook is where for every Tweet, I try to extract the entities. More particularly, from the utterance as input, I want the output to be all the entities in that utterance stored in a dictionary.
 
-### "deploy" directory (this directory is where I compiled everything and was able to create my app using Python scripts):
+### "deploy" directory (this directory is where I compiled everything and was able to create my Streamlit app using Python scripts):
 
 * **actions.py**
 
