@@ -1,6 +1,8 @@
 # Eve Bot
 Welcome to Enhancing Virtual Engagement with Eve, a Twitter Apple Support bot. 
 
+### Watch my demo video [HERE](https://www.loom.com/share/822caa5194d24782931b71fd5a43cdf1).
+
 # Summary
 
 Here is a summary of what each file contains:
