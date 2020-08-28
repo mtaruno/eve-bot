@@ -2,8 +2,11 @@
 Welcome to Enhancing Virtual Engagement with Eve, a Twitter Apple Support bot. 
 
 
-
 ### Watch my demo video [HERE](https://www.loom.com/share/822caa5194d24782931b71fd5a43cdf1).
+
+Here's a snippet of it where I ask EVE how to update my MacBook Pro:
+
+![demo snippet](https://github.com/mtaruno/eve-bot/blob/master/data/snippet.gif)
 
 # Summary
 
