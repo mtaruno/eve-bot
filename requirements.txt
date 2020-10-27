@@ -27,7 +27,7 @@ cffi==1.14.0
 chardet==3.0.4
 click==7.1.2
 colorama==0.4.3
-cryptography==2.9.2
+cryptography==3.2
 cycler==0.10.0
 cymem @ file:///Users/runner/miniforge3/conda-bld/cymem_1591801134721/work
 Cython==0.29.20
