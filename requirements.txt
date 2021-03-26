@@ -143,7 +143,7 @@ pytest==5.4.3
 pytest-runner==5.2
 python-dateutil==2.8.1
 pytz==2020.1
-PyYAML==5.3.1
+PyYAML==5.4
 pyzmq==19.0.1
 qtconsole==4.7.5
 QtPy==1.9.0
