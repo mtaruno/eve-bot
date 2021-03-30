@@ -131,7 +131,7 @@ pycld2==0.41
 pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1593275161868/work
 pydeck==0.4.0b2
 pydot==1.3.0
-Pygments==2.6.1
+Pygments==2.7.4
 pylint @ file:///opt/concourse/worker/volumes/live/42ede439-2571-4cb2-513c-394625d2381b/volume/pylint_1592496039330/work
 pyOpenSSL==19.1.0
 pyparsing==2.4.7
