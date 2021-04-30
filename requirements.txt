@@ -150,7 +150,7 @@ QtPy==1.9.0
 regex @ file:///opt/concourse/worker/volumes/live/5c3450d5-f152-477e-507e-094a7be51d80/volume/regex_1593435586246/work
 requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1592425495151/work
 requests-oauthlib==1.3.0
-rsa==4.0
+rsa==4.7
 s3fs==0.4.2
 s3transfer==0.1.13
 sacremoses @ file:///home/conda/feedstock_root/build_artifacts/sacremoses_1588857588528/work
