@@ -178,7 +178,7 @@ statsmodels @ file:///Users/runner/miniforge3/conda-bld/statsmodels_159196327754
 streamlit==0.63.0
 tensorboard==2.2.2
 tensorboard-plugin-wit==1.7.0
-tensorflow==2.2.0
+tensorflow==2.5.0
 tensorflow-estimator==2.2.0
 termcolor==1.1.0
 terminado==0.8.3
