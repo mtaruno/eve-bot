@@ -76,7 +76,7 @@ jsonschema==3.2.0
 jupyter-client @ file:///home/conda/feedstock_root/build_artifacts/jupyter_client_1594732094290/work
 jupyter-core==4.6.3
 jupyter-server==0.2.1
-jupyterlab==2.2.0
+jupyterlab==2.2.10
 jupyterlab-server @ file:///home/conda/feedstock_root/build_artifacts/jupyterlab_server_1593951277307/work
 Keras==2.4.3
 Keras-Preprocessing==1.1.2
