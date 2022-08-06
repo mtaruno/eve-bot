@@ -175,7 +175,7 @@ sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
 srsly @ file:///Users/runner/miniforge3/conda-bld/srsly_1589222440335/work
 statsmodels @ file:///Users/runner/miniforge3/conda-bld/statsmodels_1591963277541/work
-streamlit==0.63.0
+streamlit==1.11.1
 tensorboard==2.2.2
 tensorboard-plugin-wit==1.7.0
 tensorflow==2.2.0
