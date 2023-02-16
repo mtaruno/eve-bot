@@ -204,7 +204,7 @@ wasabi @ file:///home/conda/feedstock_root/build_artifacts/wasabi_1592819210112/
 watchdog==0.10.3
 wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
 webencodings==0.5.1
-Werkzeug==1.0.1
+Werkzeug==2.2.3
 widgetsnbextension==3.5.1
 wrapt==1.12.1
 yellowbrick==1.1
